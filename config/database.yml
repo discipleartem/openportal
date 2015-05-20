@@ -1,0 +1,27 @@
+default: &default
+  adapter: postgresql
+  pool: 5
+  timeout: 5000
+
+development:
+  <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: blog_db
+  pool: 5
+  username: blog_user
+  password: 'blog_qwerty'
+
+test:
+  <<: *default
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: test_blog_db
+  pool: 5
+  username: blog_user
+  password: 'blog_qwerty'
+
+production:
+  <<: *default

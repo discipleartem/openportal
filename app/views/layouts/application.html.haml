@@ -1,0 +1,44 @@
+!!!
+%html{:lang => "ru"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
+    //%meta{:content => "", :name => "Как научиться программировать с нуля? В данном Блоге мы будем шаг за шагом учится программировать"}/
+    //%meta{:content => "", :name => "discipleartem"}/
+    -#%link{:href => "../../assets/ico/favicon.ico", :rel => "shortcut icon"}/
+    %title Учим программировать с нуля
+    / Bootstrap core CSS
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  %body
+    .navbar.navbar-inverse.navbar-fixed-top{:role => "navigation"}
+      .container
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %a.navbar-brand{:href => "#"} Главная
+        .collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{:href => "#"} Основы
+            %li.active
+              %a{:href => "#"} HTML
+            %li.active
+              %a{:href => "#"} CSS
+            %li.active
+              %a{:href => "#"} JS/j-query
+            %li.active
+              %a{:href => "#"} Другие технологии
+            %li.active
+              %a{:href => "#"} Rails Lessons
+            %li.active
+              %a{:href => new_user_session_path } Вход
+            %li.active
+              %a{:href => "#"} Регистрация
+
+
+        / /.nav-collapse
+    .container
+      = yield 
